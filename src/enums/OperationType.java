@@ -13,9 +13,15 @@ public enum OperationType {
 
     public String getDescription() {
         if(this == RETRAIT) {
-            return "retrait d'argent"
-        }else if(this == DEPOT){
-            return "Dépot d'argent"
+            return "retrait d'argent";
+        }else if(this == DEPOT) {
+            return "Dépot d'argent";
+        }else if(this == CONSULTATION) {
+            return "Voir son solde";
+        }else if(this == IMPRESSION){
+            return "Imprimé un relevé";
+        }else{
+            return "Changer son code PIN";
         }
     }
 }
