@@ -1,6 +1,8 @@
 package src.central;
 import src.client.*;
 import src.enums.TransactionStatus;
+import java.util.List;
+import java.util.ArrayList;
 
 public class CompteBancaire {
     private String numeroCompte;
@@ -9,6 +11,9 @@ public class CompteBancaire {
     private double retraitAujourdhui;
     private Client proprietaire;
 
+    //historique des transactions
+    private List<Transaction> historique;
+
     // Constructeur
     public CompteBancaire(String numeroCompte, double soldeInitial, Client proprio){
         this.numeroCompte = numeroCompte;
@@ -16,6 +21,8 @@ public class CompteBancaire {
         this.limiteRetraitJournalier = 300; // par defaut
         this.retraitAujourdhui = 0;
         this.proprietaire = proprio;
+        //initialiser l'historique 
+        this.historique = new ArrayList<>();
     }
 
     // Methodes 
@@ -59,6 +66,23 @@ public class CompteBancaire {
         System.out.println("Retrait aujourd'hui: " + retraitAujourdhui + "€");
     }
 
+    // ajouter une transaction à l'historique
+    public void ajouterTransaction(Transaction transaction) {
+        historique.add(transaction);
+    }
+
+    //afficher l'historique
+    public void afficherHistorique() {
+        System.out.println("\n=== HISTORIQUE DES TRANSACTIONS ===");
+        if(historique.isEmpty()) {
+            System.out.println("Aucune transaction.");
+        } else {
+            for(Transaction t : historique) {
+                t.afficher();
+            }
+        }
+        System.out.println("Total transactions: " + historique.size());
+    }
     //getters
     public Client getProprietaire() {return proprietaire; }
     public double getSolde() {return solde; }

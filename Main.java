@@ -6,12 +6,17 @@ import src.client.Client;
 public class Main {
     public static void main(String[] args ){
         Client client = new Client("Kerrad", "Arezki", "1234-5678-9012-3456", "1248");
+        CompteBancaire compte = new CompteBancaire(client.getNumerocarte(), 0, client);
 
-       CompteBancaire compte = new CompteBancaire("12345", 0, client);
-       Transaction tr = new Transaction(OperationType.DEPOT, 1000, TransactionStatus.SUCCES, "1234");
+        Transaction tr = new Transaction(client.getNumerocarte(), OperationType.RETRAIT, 2000);
+        Transaction tr2 = new Transaction(client.getNumerocarte(), OperationType.DEPOT, 1000);
+        
+        tr.setStatus(compte.retirer(2000));
+        compte.ajouterTransaction(tr);
+        compte.ajouterTransaction(tr2);
 
-       tr.afficher();
-       System.out.println(compte.getProprietaire().getNumerocarte());
+        compte.afficherHistorique();
     }
+
 }
     

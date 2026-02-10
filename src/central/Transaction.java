@@ -7,22 +7,21 @@ import src.enums.TransactionStatus;
 
 public class Transaction {
     private String id;
-    private Date date;
+    private String date;
     private OperationType type;
     private double montant;
     private TransactionStatus status;
-    private String compteSource;
+    private String numeroCarte;
 
     // constructeur
 
-    public Transaction (OperationType type, double montant, 
-                            TransactionStatus status, String compteSource){
-        this.id = "T" + System.currentTimeMillis(); // genere id unique a base du temsp
-        this.date = new Date();
+    public Transaction(String numeroCarte, OperationType type, double montant) {
+        this.id = "T" + System.currentTimeMillis(); // ID unique
+        this.date = java.time.LocalDateTime.now().toString();
+        this.numeroCarte = numeroCarte;
         this.type = type;
         this.montant = montant;
-        this.status = status;
-        this.compteSource = compteSource;
+        this.status = TransactionStatus.SUCCES; // Par défaut
     }
 
     //afficher la transaction
@@ -30,16 +29,23 @@ public class Transaction {
         System.out.println("┌─────────────────────────────────┐");
         System.out.println("|Transaction: " + id);
         System.out.println("|Date:" + date);
-        System.out.println("|Type:" + type);
+        System.out.println("|Type:" + type.getDescription());
         System.out.println("|Montant:" + montant + "€");
         System.out.println("|Status:" + status.getMessage());
-        System.out.println("|Compte:" + compteSource);
+        System.out.println("|Carte:" + numeroCarte);
         System.out.println("└─────────────────────────────────┘");
     }
 
+    //changer le statut
+    public void setStatus(TransactionStatus status) {
+        this.status = status;
+    }
+
     //getters
+    public String getId() { return id; }
+    public String getDate() {return date; }
     public OperationType getType() { return type; }
     public double getMontant() { return montant; }
     public TransactionStatus getStatus() { return status; }
-    public Date getdate() { return date; }
+    
 }
