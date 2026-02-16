@@ -1,9 +1,7 @@
 package src.security;
 
 import java.security.MessageDigest;
-import java.util.Base64;
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
+
 
 public class Securite {
     
@@ -41,7 +39,41 @@ public class Securite {
 
         return "SIG_" + Integer.toHexString(signature);
     }
- 
+
+    // verifier la signature 
+
+    public static boolean verifierSignature(String message, String signature) {
+        String bonneSignature = signerMessage(message);
+        return bonneSignature.equals(signature);
+    }
+
+    // creer un message sécurisé
+
+    public static String creerMessageSecurise(String message) {
+        String signature = signerMessage(message);
+        return message + "|SIG" + signature;
+    }
+
+    // lire et verifier un message securisé
+
+    public static String lireMessageSecurise(String messageSecurise) {
+        // separer message et signature
+        int sigIndex = messageSecurise.indexOf("|SIG=");
+        if (sigIndex == -1) {
+            System.out.println("❌ Format invalide : pas de signature");
+            return null;
+        }
+        
+        String message = messageSecurise.substring(0, sigIndex);
+        String signature = messageSecurise.substring(sigIndex + 5);
+        
+        if (verifierSignature(message, signature)) {
+            return message;
+        } else {
+            System.out.println("❌ Signature invalide !");
+            return null;
+        }
+    }
 }
 
 

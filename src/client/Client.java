@@ -31,5 +31,5 @@ public class Client {
     // Getters pour acceder aux données
     public String getNom() {return nom; }
     public String getPrenom() {return prenom; }
-    public String getNumerocarte() {return numeroCarte; }
+    public String getNumeroCarte() {return numeroCarte; }
 }

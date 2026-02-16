@@ -86,6 +86,7 @@ public class CompteBancaire {
     //getters
     public Client getProprietaire() {return proprietaire; }
     public double getSolde() {return solde; }
+    public String getNumeroCompte(){return numeroCompte; }
 }
 
 
