@@ -95,6 +95,36 @@ public class Banque  {
                 return "ECHEC|OPERATION_INCONNUE";
         }
     }
+        // gestion des gab
+    
+    public void ajouterGAB(GAB gab) {
+        gabList.add(gab);
+        log("GAB connecté: " + gab.getId());
+    }
+    
+    public void recevoirMessageGAB(String messageSecurise) {
+        String message = Securite.lireMessageSecurise(messageSecurise);
+        if (message == null) {
+            log("Message GAB invalide");
+            return;
+        }
+        
+        // Format: GAB_ID|ETAT|STATUT|TIMESTAMP
+        String[] parties = message.split("\\|");
+        if (parties.length >= 3 && parties[1].equals("ETAT")) {
+            String gabId = parties[0];
+            String etat = parties[2];
+            
+            log("État GAB " + gabId + " : " + etat);
+            
+            // Actions correctives selon l'état
+            if (etat.equals("BILLETS_BAS")) {
+                log("ALERTE: Niveau billets bas sur GAB " + gabId);
+            } else if (etat.equals("CAMERA_PANNE")) {
+                log("URGENT: Caméra HS sur GAB " + gabId + " - Désactivation?");
+            }
+        }
+    }
     // loggins
     private void log(String message) {
         String logMessage = "[" + java.time.LocalDateTime.now() + "] " + message;
