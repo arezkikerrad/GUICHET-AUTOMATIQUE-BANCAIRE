@@ -74,7 +74,7 @@ public class GABInterface extends JFrame {
         accueilPanel = new JPanel(new GridBagLayout());
         accueilPanel.setBackground(Color.WHITE);
         
-        JLabel titre = new JLabel("🏦 GAB BANCAIRE");
+        JLabel titre = new JLabel("GAB BANCAIRE");
         titre.setFont(new Font("Arial", Font.BOLD, 28));
         
         JLabel instruction = new JLabel("Entrez votre numéro de carte :");
@@ -125,7 +125,7 @@ public class GABInterface extends JFrame {
         pinPanel = new JPanel(new GridBagLayout());
         pinPanel.setBackground(Color.WHITE);
         
-        JLabel titre = new JLabel("🔐 Code PIN");
+        JLabel titre = new JLabel("Code PIN");
         titre.setFont(new Font("Arial", Font.BOLD, 28));
         
         JLabel instruction = new JLabel("Entrez votre code secret :");
@@ -188,18 +188,18 @@ public class GABInterface extends JFrame {
         menuPanel = new JPanel(new GridBagLayout());
         menuPanel.setBackground(Color.WHITE);
         
-        JLabel titre = new JLabel("🏧 Menu Principal");
+        JLabel titre = new JLabel("Menu Principal");
         titre.setFont(new Font("Arial", Font.BOLD, 28));
         
         bienvenueLabel = new JLabel("Bienvenue");
         bienvenueLabel.setFont(new Font("Arial", Font.PLAIN, 16));
         
         // Boutons
-        JButton retraitBtn = new JButton("💰 Retrait");
-        JButton depotBtn = new JButton("📥 Dépôt");
-        JButton soldeBtn = new JButton("📊 Consultation solde");
-        JButton releveBtn = new JButton("🖨️ Imprimer relevé");
-        JButton quitterBtn = new JButton("🚪 Quitter");
+        JButton retraitBtn = new JButton("Retrait");
+        JButton depotBtn = new JButton("Dépôt");
+        JButton soldeBtn = new JButton("Consultation solde");
+        JButton releveBtn = new JButton("Imprimer relevé");
+        JButton quitterBtn = new JButton("Quitter");
         
         Font btnFont = new Font("Arial", Font.BOLD, 16);
         retraitBtn.setFont(btnFont);
@@ -288,7 +288,7 @@ public class GABInterface extends JFrame {
         operationPanel = new JPanel(new GridBagLayout());
         operationPanel.setBackground(Color.WHITE);
         
-        JLabel titre = new JLabel("💵 Montant");
+        JLabel titre = new JLabel("Montant");
         titre.setFont(new Font("Arial", Font.BOLD, 28));
         
         JLabel instruction = new JLabel("Entrez le montant (€) :");
@@ -364,7 +364,7 @@ public class GABInterface extends JFrame {
         resultatPanel = new JPanel(new GridBagLayout());
         resultatPanel.setBackground(Color.WHITE);
         
-        JLabel titre = new JLabel("📋 Résultat");
+        JLabel titre = new JLabel("Résultat");
         titre.setFont(new Font("Arial", Font.BOLD, 28));
         
         resultatArea = new JTextArea(10, 30);
