@@ -1,4 +1,4 @@
-﻿# GUICHET-AUTOMATIQUE-BANCAIRE
+# GUICHET-AUTOMATIQUE-BANCAIRE
 Nom de l encadrant :Jastrebic Dragutin Et Koviljka
 
 Catégorie(s): app. gestion
@@ -8,3 +8,4 @@ Le scénario: Le client de la banque met sa carte de crédit dans un GAB (guiche
 
 Objectifs :
 Notre but est de développer des modules qui simulent ce scénario. Les outils développement seront Java, Android, Objective C/ Ios, NOCODE, Les outils IA, selon le choix des étudiants.
+´´
