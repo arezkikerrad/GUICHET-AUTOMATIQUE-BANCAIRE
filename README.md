@@ -2,10 +2,11 @@
 Nom de l encadrant :Jastrebic Dragutin Et Koviljka
 
 Catégorie(s): app. gestion
-
+    
 Contexte
 Le scénario: Le client de la banque met sa carte de crédit dans un GAB (guichet automatique bancaire). Le premier module envoie un message vers le module central. Ce message contient des informations différentes, comme le numéro de la carte, la date de l'opération, le type de l'opération souhaitée par le client (le retrait d'espèces, le dépôt d'espèces, la consultation du solde, l'impression du solde etc.), le numéro du guichet etc. Pour des raisons de sécurité, ce message est crypté avec une signature. Aussi, le format du message dépend du constructeur du guichet – chaque constructeur peux avoir son propre format. Avant la réception du message par le module central, un deuxième module, de sécurité, vérifie le code confidentiel et refuse la transaction si le code saisi sur le guichet ne correspond pas au code confidentiel du propriétaire de la carte bancaire. Il vérifie aussi la signature avec la même clé et refuse la transaction si la signature ne correspond pas. Un troisième module, le module central, effectue l'opération souhaitée par le client (par exemple, il met à jour le solde de son compte en cas de retrait /dépôt, ou renvoie le solde au guichet en cas de consultation, renvoie les données contenues dans le RIB en cas de l'impression etc.). Le module central peut refuser d'effectuer l'opération si les droits du propriétaire sont insuffisants – en cas de dépassement du seuil quotidien ou hebdomadaire, par exemple. Un message est renvoyé au GAB pour l'informer du succès /échec du traitement. En fonction du message reçu, le GAB effectue l'opération demandée, ou affiche le message de refus. Le GAB envoie aussi d'autres messages, appelés les messages d'état, au module central. Les messages d'états typiques sont les suivants: tout est OK, le niveau de billets est bas, le niveau d'encre dans l'imprimante est bas, le niveau de papier est bas, la caméra est en panne etc. En fonction du message reçu, le module central, peut décider de faire une action corrective (remonter un avertissement à la supervision) ou d'éteindre le guichet.
 
 Objectifs :
 Notre but est de développer des modules qui simulent ce scénario. Les outils développement seront Java, Android, Objective C/ Ios, NOCODE, Les outils IA, selon le choix des étudiants.
 ´´
+
