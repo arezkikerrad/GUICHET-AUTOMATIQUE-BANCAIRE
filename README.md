@@ -10,6 +10,3 @@ Objectifs :
 Notre but est de développer des modules qui simulent ce scénario. Les outils développement seront Java, Android, Objective C/ Ios, NOCODE, Les outils IA, selon le choix des étudiants.
 ´´
 
-
-kliollkjbl,
-
